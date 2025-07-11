@@ -11,13 +11,13 @@ export default function Box(){
 
     const stages = ["", "Tohum", "Fidan", "Bitki", "Çiçek", "Kurumuş Çiçek"];
 
-    const seedCost = 1; 
-    const cropReward = 3;
+    const seedCost = 10; 
+    const cropReward = 20;
     const handleClick = () => {
         if (stage === 0 && balance >= seedCost) {
             setStage(1); 
             setIsGrowing(true);
-            setBalance(balance - seedCost); 
+            setBalance(balance - seedCost);
         } 
         else if (stage === 4 && isWaitingForCollection) {
             setStage(0);
@@ -26,6 +26,11 @@ export default function Box(){
             setBalance(balance + cropReward);
         }
         else if (stage === 5) {
+            setStage(0); 
+            setIsGrowing(false);
+            setIsWaitingForCollection(false);
+        }
+        else if(stage > 0 && stage < 5) {
             setStage(0); 
             setIsGrowing(false);
             setIsWaitingForCollection(false);

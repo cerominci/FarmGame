@@ -7,7 +7,7 @@ export const BalanceDisplay = () => {
 
     return (
         <div className={styles.balance}>
-            <h2>Balance: {balance}</h2>
+            <h2>Balance: {balance}$</h2>
         </div>
     );
 };

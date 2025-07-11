@@ -72,8 +72,8 @@ function Box() {
         "Çiçek",
         "Kurumuş Çiçek"
     ];
-    const seedCost = 1;
-    const cropReward = 3;
+    const seedCost = 10;
+    const cropReward = 20;
     const handleClick = ()=>{
         if (stage === 0 && balance >= seedCost) {
             setStage(1);
@@ -85,6 +85,10 @@ function Box() {
             setIsWaitingForCollection(false);
             setBalance(balance + cropReward);
         } else if (stage === 5) {
+            setStage(0);
+            setIsGrowing(false);
+            setIsWaitingForCollection(false);
+        } else if (stage > 0 && stage < 5) {
             setStage(0);
             setIsGrowing(false);
             setIsWaitingForCollection(false);
@@ -161,17 +165,17 @@ function Box() {
                 children: stages[stage]
             }, void 0, false, {
                 fileName: "[project]/src/app/components/box/box.tsx",
-                lineNumber: 84,
+                lineNumber: 90,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/components/box/box.tsx",
-            lineNumber: 83,
+            lineNumber: 89,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/components/box/box.tsx",
-        lineNumber: 82,
+        lineNumber: 88,
         columnNumber: 9
     }, this);
 }
@@ -216,7 +220,8 @@ const BalanceDisplay = ()=>{
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
             children: [
                 "Balance: ",
-                balance
+                balance,
+                "$"
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/components/balance/balance.tsx",
@@ -285,12 +290,12 @@ function Home() {
                     className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$page$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].balanceTopLeft,
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$balance$2f$balance$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BalanceDisplay"], {}, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 24,
-                        columnNumber: 48
+                        lineNumber: 27,
+                        columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 24,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -298,18 +303,18 @@ function Home() {
                     children: renderFarmGrid()
                 }, void 0, false, {
                     fileName: "[project]/src/app/page.tsx",
-                    lineNumber: 25,
+                    lineNumber: 29,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/page.tsx",
-            lineNumber: 23,
+            lineNumber: 25,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 22,
+        lineNumber: 24,
         columnNumber: 5
     }, this);
 }
