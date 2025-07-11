@@ -1,0 +1,66 @@
+/* [project]/src/app/page.module.css [app-client] (css) */
+.page-module___8aEwW__container {
+  box-sizing: border-box;
+  color: #2d5016;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 800px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+}
+
+.page-module___8aEwW__title {
+  color: #2d5016;
+  text-shadow: 2px 2px 4px #0000001a;
+  margin-bottom: .5rem;
+  font-size: 2.5rem;
+}
+
+.page-module___8aEwW__info {
+  text-align: center;
+  color: #4a4a4a;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.page-module___8aEwW__stats {
+  color: #2d5016;
+  background-color: #fffc;
+  border: 2px solid #7cb342;
+  border-radius: 20px;
+  padding: .5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.page-module___8aEwW__farmGrid {
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  padding: 20px;
+  display: grid;
+}
+
+
+/* [project]/src/app/components/box/Box.module.css [app-client] (css) */
+.Box-module__hDsz5q__box {
+  cursor: pointer;
+  background-color: #8b4513;
+  border: 2px solid #654321;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin: 4px;
+  display: flex;
+}
+
+
+/*# sourceMappingURL=src_app_5aa9096c._.css.map*/

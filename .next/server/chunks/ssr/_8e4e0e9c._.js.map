@@ -2,6 +2,5 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/ceren.karaoglan/Downloads/FarmGame/src/app/page.tsx"],"sourcesContent":["\"use client\";\nimport styles from \"./page.module.css\";\n\nexport default function Home() {\n  return (\n    <></>\n  );\n}\n"],"names":[],"mappings":";;;;AAAA;;AAGe,SAAS;IACtB,qBACE;AAEJ","debugId":null}},
-    {"offset": {"line": 21, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/ceren.karaoglan/Downloads/FarmGame/node_modules/next/src/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = require('../../module.compiled').vendored[\n  'react-ssr'\n].ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,QAAQ,4HAAyBC,QAAQ,CACxD,YACD,CAACC,kBAAkB","ignoreList":[0],"debugId":null}}]
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/ceren.karaoglan/Downloads/FarmGame/node_modules/next/src/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = require('../../module.compiled').vendored[\n  'react-ssr'\n].ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,QAAQ,4HAAyBC,QAAQ,CACxD,YACD,CAACC,kBAAkB","ignoreList":[0],"debugId":null}}]
 }
