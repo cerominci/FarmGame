@@ -1,5 +1,5 @@
-/* [project]/src/app/signup/Signup.module.css [app-client] (css) */
-.Signup-module__GR7wDG__container {
+/* [project]/src/app/login/Login.module.css [app-client] (css) */
+.Login-module__noQWca__container {
   background-color: #0000;
   background-image: url("/farm-bg.png"), linear-gradient(135deg, #e0ffd6 0%, #f5f7fa 100%);
   background-position: 0 0;
@@ -16,7 +16,7 @@
   position: relative;
 }
 
-.Signup-module__GR7wDG__title {
+.Login-module__noQWca__title {
   color: #4e7c2f;
   text-shadow: 1px 2px 8px #fffbe7, 0 2px #b2d38f;
   letter-spacing: 1px;
@@ -28,13 +28,13 @@
   display: flex;
 }
 
-.Signup-module__GR7wDG__title:before {
+.Login-module__noQWca__title:before {
   content: "🌾";
   margin-right: .5rem;
   font-size: 2.2rem;
 }
 
-.Signup-module__GR7wDG__input {
+.Login-module__noQWca__input {
   background: #fffbe7;
   border: 2px solid #b2d38f;
   border-radius: 8px;
@@ -47,12 +47,12 @@
   box-shadow: 0 2px 8px #4caf5012;
 }
 
-.Signup-module__GR7wDG__input:focus {
+.Login-module__noQWca__input:focus {
   border-color: #7cb342;
   box-shadow: 0 0 0 2px #b2d38f44;
 }
 
-.Signup-module__GR7wDG__button {
+.Login-module__noQWca__button {
   color: #fff;
   cursor: pointer;
   background: linear-gradient(90deg, #7cb342 60%, #b2d38f 100%);
@@ -66,12 +66,12 @@
   box-shadow: 0 2px 8px #7cb34221;
 }
 
-.Signup-module__GR7wDG__button:hover {
+.Login-module__noQWca__button:hover {
   background: linear-gradient(90deg, #558b2f 60%, #aee571 100%);
   transform: scale(1.04);
 }
 
-.Signup-module__GR7wDG__error {
+.Login-module__noQWca__error {
   color: #d32f2f;
   background: #fff3f3;
   border: 1px solid #ffcdd2;
@@ -81,7 +81,7 @@
   font-size: 1rem;
 }
 
-.Signup-module__GR7wDG__signupLink {
+.Login-module__noQWca__loginLink {
   color: #4e7c2f;
   background: #fffbe7;
   border-radius: 6px;
@@ -91,7 +91,7 @@
   box-shadow: 0 1px 4px #b2d38f33;
 }
 
-.Signup-module__GR7wDG__signupLink span {
+.Login-module__noQWca__loginLink span {
   color: #1976d2;
   cursor: pointer;
   font-weight: bold;
@@ -99,4 +99,4 @@
 }
 
 
-/*# sourceMappingURL=src_app_signup_Signup_module_9c0e8ce1.css.map*/
+/*# sourceMappingURL=src_app_login_Login_module_d692ad41.css.map*/

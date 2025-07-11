@@ -5,6 +5,12 @@
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.v({
+  "button": "Signup-module__GR7wDG__button",
+  "container": "Signup-module__GR7wDG__container",
+  "error": "Signup-module__GR7wDG__error",
+  "input": "Signup-module__GR7wDG__input",
+  "signupLink": "Signup-module__GR7wDG__signupLink",
+  "title": "Signup-module__GR7wDG__title",
 });
 }}),
 "[project]/src/app/signup/page.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
@@ -123,7 +129,7 @@ function Home() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signup$2f$Signup$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].loginLink,
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signup$2f$Signup$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].signupLink,
                 children: [
                     "Zaten hesabın var mı?",
                     ' ',

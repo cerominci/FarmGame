@@ -2,11 +2,19 @@
 .page-module___8aEwW__container {
   box-sizing: border-box;
   color: #2d5016;
+  background-color: #0000;
+  background-image: url("/farm-bg.png"), linear-gradient(135deg, #e0ffd6 0%, #f5f7fa 100%);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  background-origin: padding-box;
+  background-clip: border-box;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  max-width: 800px;
+  max-width: 900px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 2rem;
@@ -17,8 +25,18 @@
 .page-module___8aEwW__title {
   color: #2d5016;
   text-shadow: 2px 2px 4px #0000001a;
+  letter-spacing: 1px;
+  align-items: center;
+  gap: .5rem;
   margin-bottom: .5rem;
   font-size: 2.5rem;
+  display: flex;
+}
+
+.page-module___8aEwW__title:before {
+  content: "🌾";
+  margin-right: .5rem;
+  font-size: 2.2rem;
 }
 
 .page-module___8aEwW__info {
@@ -40,11 +58,15 @@
 }
 
 .page-module___8aEwW__farmGrid {
+  background-color: #8b45131a;
+  border: 3px solid #8b4513;
+  border-radius: 15px;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(4, 1fr);
   gap: 4px;
   padding: 20px;
   display: grid;
+  box-shadow: 0 8px 16px #0003;
 }
 
 .page-module___8aEwW__balanceTopLeft {
@@ -52,6 +74,53 @@
   position: absolute;
   top: 20px;
   left: 20px;
+}
+
+.page-module___8aEwW__storeButton {
+  cursor: pointer;
+  z-index: 20;
+  background: #fffbe7;
+  border: 2px solid #7cb342;
+  border-radius: 8px;
+  padding: .5rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  box-shadow: 0 2px 8px #00000014;
+}
+
+.page-module___8aEwW__storeModal {
+  z-index: 100;
+  background: #0000004d;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  inset: 0;
+}
+
+.page-module___8aEwW__storeModalContent {
+  background: #fff;
+  border-radius: 16px;
+  min-width: 320px;
+  min-height: 180px;
+  padding: 2rem 2.5rem 1.5rem;
+  position: relative;
+  box-shadow: 0 8px 32px #0000002e;
+}
+
+.page-module___8aEwW__closeButton {
+  color: #888;
+  cursor: pointer;
+  z-index: 110;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 16px;
 }
 
 

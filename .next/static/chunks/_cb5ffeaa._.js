@@ -1,75 +1,146 @@
 (globalThis.TURBOPACK = globalThis.TURBOPACK || []).push([typeof document === "object" ? document.currentScript : undefined, {
 
-"[project]/src/app/login/page.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"[project]/src/app/signin/Signin.module.css [app-client] (css module)": ((__turbopack_context__) => {
+
+var { g: global, __dirname } = __turbopack_context__;
+{
+__turbopack_context__.v({
+  "button": "Signin-module___dKMma__button",
+  "container": "Signin-module___dKMma__container",
+  "error": "Signin-module___dKMma__error",
+  "input": "Signin-module___dKMma__input",
+  "signupLink": "Signin-module___dKMma__signupLink",
+  "title": "Signin-module___dKMma__title",
+});
+}}),
+"[project]/src/app/signin/page.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
 {
 __turbopack_context__.s({
-    "default": (()=>Home)
+    "default": (()=>SignInPage)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/app/signin/Signin.module.css [app-client] (css module)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
 ;
-function Home() {
+;
+;
+function SignInPage() {
     _s();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    const [username, setUsername] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [password, setPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     function handleSignIn() {
-        router.push('/signin');
-    }
-    function handleSignUp() {
-        router.push('/signup');
+        setError('');
+        if (!username || !password) {
+            setError('Lütfen tüm alanları doldurun.');
+            return;
+        }
+        try {
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find((u)=>u.username === username && u.password === password);
+            if (!user) {
+                setError('Kullanıcı adı veya şifre yanlış.');
+                return;
+            }
+            localStorage.setItem('currentUser', username);
+            alert('Giriş başarılı!');
+            router.push('/');
+        } catch (err) {
+            setError('Giriş yapılırken bir hata oluştu.');
+        }
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].container,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                children: "Farm Game"
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].title,
+                children: "Giriş Yap"
             }, void 0, false, {
-                fileName: "[project]/src/app/login/page.tsx",
-                lineNumber: 19,
-                columnNumber: 9
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 46,
+                columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                children: "Welcome to the Farm Game! Please sign in or sign up to continue."
+            error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].error,
+                children: error
             }, void 0, false, {
-                fileName: "[project]/src/app/login/page.tsx",
-                lineNumber: 20,
-                columnNumber: 9
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 47,
+                columnNumber: 17
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                onClick: handleSignIn,
-                children: "Sign In"
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                type: "text",
+                value: username,
+                onChange: (e)=>setUsername(e.target.value),
+                placeholder: "Kullanıcı adı",
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].input
             }, void 0, false, {
-                fileName: "[project]/src/app/login/page.tsx",
-                lineNumber: 21,
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 48,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                type: "password",
+                value: password,
+                onChange: (e)=>setPassword(e.target.value),
+                placeholder: "Şifre",
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].input
+            }, void 0, false, {
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 55,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                onClick: handleSignUp,
-                children: "Sign Up"
+                onClick: handleSignIn,
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].button,
+                children: "Giriş Yap"
             }, void 0, false, {
-                fileName: "[project]/src/app/login/page.tsx",
-                lineNumber: 22,
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 62,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].signupLink,
+                children: [
+                    "Hesabın yok mu?",
+                    ' ',
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        onClick: ()=>router.push('/signup'),
+                        children: "Kayıt ol"
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/signin/page.tsx",
+                        lineNumber: 70,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 68,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
-        fileName: "[project]/src/app/login/page.tsx",
-        lineNumber: 18,
+        fileName: "[project]/src/app/signin/page.tsx",
+        lineNumber: 45,
         columnNumber: 5
     }, this);
 }
-_s(Home, "fN7XvhJ+p5oE6+Xlo0NJmXpxjC8=", false, function() {
+_s(SignInPage, "va7D7BK1fjewIl7C6D2jYpgm3FQ=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
 });
-_c = Home;
+_c = SignInPage;
 var _c;
-__turbopack_context__.k.register(_c, "Home");
+__turbopack_context__.k.register(_c, "SignInPage");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
@@ -302,4 +373,4 @@ module.exports = __turbopack_context__.r("[project]/node_modules/next/dist/clien
 }}),
 }]);
 
-//# sourceMappingURL=_0831b289._.js.map
+//# sourceMappingURL=_cb5ffeaa._.js.map

@@ -1,6 +1,7 @@
 "use client"
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import styles from "./Signin.module.css";
 
 interface User {
   username: string;
@@ -41,30 +42,32 @@ export default function SignInPage() {
   }
 
   return (
-    <div >
-      <h1 >Giriş Yap</h1>
-      {error && <p>{error}</p>}
+    <div className={styles.container}>
+      <h1 className={styles.title}>Giriş Yap</h1>
+      {error && <p className={styles.error}>{error}</p>}
       <input
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder="Kullanıcı adı"
+        className={styles.input}
       />
       <input
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Şifre"
-      
+        className={styles.input}
       />
       <button 
         onClick={handleSignIn}
+        className={styles.button}
       >
         Giriş Yap
       </button>
-      <p>
+      <p className={styles.signupLink}>
         Hesabın yok mu?{' '}
-        <span onClick={() => router.push('/signup')} style={{ cursor: 'pointer', color: 'blue' }}>
+        <span onClick={() => router.push('/signup')}>
           Kayıt ol
         </span>
       </p>

@@ -82,7 +82,7 @@ export default function Home() {
       >
         Kayıt Ol
       </button>
-      <p className={styles.loginLink}>
+      <p className={styles.signupLink}>
         Zaten hesabın var mı?{' '}
         <span onClick={() => router.push('/signin')} style={{ cursor: 'pointer', color: 'blue' }}>
           Giriş yap

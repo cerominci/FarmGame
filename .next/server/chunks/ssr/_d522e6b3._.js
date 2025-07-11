@@ -6,10 +6,14 @@ var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.v({
   "balanceTopLeft": "page-module___8aEwW__balanceTopLeft",
+  "closeButton": "page-module___8aEwW__closeButton",
   "container": "page-module___8aEwW__container",
   "farmGrid": "page-module___8aEwW__farmGrid",
   "info": "page-module___8aEwW__info",
   "stats": "page-module___8aEwW__stats",
+  "storeButton": "page-module___8aEwW__storeButton",
+  "storeModal": "page-module___8aEwW__storeModal",
+  "storeModalContent": "page-module___8aEwW__storeModalContent",
   "title": "page-module___8aEwW__title",
 });
 }}),

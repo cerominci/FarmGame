@@ -1,87 +1,77 @@
 module.exports = {
 
-"[project]/src/app/signup/Signup.module.css [app-ssr] (css module)": ((__turbopack_context__) => {
+"[project]/src/app/signin/Signin.module.css [app-ssr] (css module)": ((__turbopack_context__) => {
 
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.v({
-  "button": "Signup-module__GR7wDG__button",
-  "container": "Signup-module__GR7wDG__container",
-  "error": "Signup-module__GR7wDG__error",
-  "input": "Signup-module__GR7wDG__input",
-  "signupLink": "Signup-module__GR7wDG__signupLink",
-  "title": "Signup-module__GR7wDG__title",
+  "button": "Signin-module___dKMma__button",
+  "container": "Signin-module___dKMma__container",
+  "error": "Signin-module___dKMma__error",
+  "input": "Signin-module___dKMma__input",
+  "signupLink": "Signin-module___dKMma__signupLink",
+  "title": "Signin-module___dKMma__title",
 });
 }}),
-"[project]/src/app/signup/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
+"[project]/src/app/signin/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
-    "default": (()=>Home)
+    "default": (()=>SignInPage)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signup$2f$Signup$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/app/signup/Signup.module.css [app-ssr] (css module)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/app/signin/Signin.module.css [app-ssr] (css module)");
 "use client";
 ;
 ;
 ;
 ;
-function Home() {
+function SignInPage() {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const [username, setUsername] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [password, setPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
-    const [confirmPassword, setConfirmPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
-    function handleSaveCredentials() {
+    function handleSignIn() {
         setError('');
-        if (!username || !password || !confirmPassword) {
+        if (!username || !password) {
             setError('Lütfen tüm alanları doldurun.');
             return;
         }
-        if (password !== confirmPassword) {
-            setError('Şifreler eşleşmiyor.');
-            return;
-        }
         try {
-            const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
-            const userExists = existingUsers.some((user)=>user.username === username);
-            if (userExists) {
-                setError('Bu kullanıcı adı zaten kullanılıyor.');
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find((u)=>u.username === username && u.password === password);
+            if (!user) {
+                setError('Kullanıcı adı veya şifre yanlış.');
                 return;
             }
-            const newUser = {
-                username,
-                password
-            };
-            existingUsers.push(newUser);
-            localStorage.setItem('users', JSON.stringify(existingUsers));
-            alert('Kayıt başarılı!');
-            router.push('/signin');
+            localStorage.setItem('currentUser', username);
+            alert('Giriş başarılı!');
+            router.push('/');
         } catch (err) {
-            setError('Kayıt sırasında bir hata oluştu.');
+            setError('Giriş yapılırken bir hata oluştu.');
         }
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signup$2f$Signup$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].container,
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].container,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signup$2f$Signup$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].title,
-                children: "Kayıt Ol"
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].title,
+                children: "Giriş Yap"
             }, void 0, false, {
-                fileName: "[project]/src/app/signup/page.tsx",
-                lineNumber: 56,
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 46,
                 columnNumber: 7
             }, this),
             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signup$2f$Signup$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].error,
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].error,
                 children: error
             }, void 0, false, {
-                fileName: "[project]/src/app/signup/page.tsx",
-                lineNumber: 57,
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 47,
                 columnNumber: 17
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -89,10 +79,10 @@ function Home() {
                 value: username,
                 onChange: (e)=>setUsername(e.target.value),
                 placeholder: "Kullanıcı adı",
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signup$2f$Signup$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].input
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].input
             }, void 0, false, {
-                fileName: "[project]/src/app/signup/page.tsx",
-                lineNumber: 58,
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 48,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -100,59 +90,44 @@ function Home() {
                 value: password,
                 onChange: (e)=>setPassword(e.target.value),
                 placeholder: "Şifre",
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signup$2f$Signup$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].input
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].input
             }, void 0, false, {
-                fileName: "[project]/src/app/signup/page.tsx",
-                lineNumber: 65,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                type: "password",
-                value: confirmPassword,
-                onChange: (e)=>setConfirmPassword(e.target.value),
-                placeholder: "Şifreyi tekrar girin",
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signup$2f$Signup$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].input
-            }, void 0, false, {
-                fileName: "[project]/src/app/signup/page.tsx",
-                lineNumber: 72,
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 55,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                onClick: handleSaveCredentials,
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signup$2f$Signup$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].button,
-                children: "Kayıt Ol"
+                onClick: handleSignIn,
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].button,
+                children: "Giriş Yap"
             }, void 0, false, {
-                fileName: "[project]/src/app/signup/page.tsx",
-                lineNumber: 79,
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 62,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signup$2f$Signup$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].signupLink,
+                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$signin$2f$Signin$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].signupLink,
                 children: [
-                    "Zaten hesabın var mı?",
+                    "Hesabın yok mu?",
                     ' ',
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        onClick: ()=>router.push('/signin'),
-                        style: {
-                            cursor: 'pointer',
-                            color: 'blue'
-                        },
-                        children: "Giriş yap"
+                        onClick: ()=>router.push('/signup'),
+                        children: "Kayıt ol"
                     }, void 0, false, {
-                        fileName: "[project]/src/app/signup/page.tsx",
-                        lineNumber: 87,
+                        fileName: "[project]/src/app/signin/page.tsx",
+                        lineNumber: 70,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
-                fileName: "[project]/src/app/signup/page.tsx",
-                lineNumber: 85,
+                fileName: "[project]/src/app/signin/page.tsx",
+                lineNumber: 68,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
-        fileName: "[project]/src/app/signup/page.tsx",
-        lineNumber: 55,
+        fileName: "[project]/src/app/signin/page.tsx",
+        lineNumber: 45,
         columnNumber: 5
     }, this);
 }
@@ -1779,4 +1754,4 @@ module.exports = __turbopack_context__.r("[project]/node_modules/next/dist/clien
 
 };
 
-//# sourceMappingURL=_97b33b8a._.js.map
+//# sourceMappingURL=_8516fe85._.js.map
