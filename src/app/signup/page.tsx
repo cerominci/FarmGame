@@ -3,6 +3,11 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import styles from './Signup.module.css'; 
 
+interface User {
+  username: string;
+  password: string;
+}
+
 export default function Home() {
   const router = useRouter();
   const [username, setUsername] = useState('');
@@ -11,10 +16,8 @@ export default function Home() {
   const [error, setError] = useState('');
   
   function handleSaveCredentials() {
-    // Reset any previous errors
     setError('');
 
-    // Validate inputs
     if (!username || !password || !confirmPassword) {
       setError('Lütfen tüm alanları doldurun.');
       return;
@@ -25,24 +28,22 @@ export default function Home() {
       return;
     }
 
-    if (password.length < 6) {
-      setError('Şifre en az 6 karakter olmalıdır.');
-      return;
-    }
-
-    const existingUser = localStorage.getItem(username);
-    if (existingUser) {
-      setError('Bu kullanıcı adı zaten kullanılıyor.');
-      return;
-    }
-
     try {
-      const userData = {
+      const existingUsers: User[] = JSON.parse(localStorage.getItem('users') || '[]');
+      
+      const userExists = existingUsers.some((user: User) => user.username === username);
+      if (userExists) {
+        setError('Bu kullanıcı adı zaten kullanılıyor.');
+        return;
+      }
+
+      const newUser: User = {
         username,
-        password,
-        createdAt: new Date().toISOString()
+        password
       };
-      localStorage.setItem('user_' + username, JSON.stringify(userData));
+      existingUsers.push(newUser);
+      
+      localStorage.setItem('users', JSON.stringify(existingUsers));
       alert('Kayıt başarılı!');
       router.push('/signin'); 
     } catch (err) {

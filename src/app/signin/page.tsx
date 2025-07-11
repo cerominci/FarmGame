@@ -2,6 +2,11 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
+interface User {
+  username: string;
+  password: string;
+}
+
 export default function SignInPage() {
   const router = useRouter();
   const [username, setUsername] = useState('');
@@ -17,19 +22,15 @@ export default function SignInPage() {
     }
 
     try {
-      const userData = localStorage.getItem('user_' + username);
-      if (!userData) {
-        setError('Kullanıcı bulunamadı.');
+      const users: User[] = JSON.parse(localStorage.getItem('users') || '[]');
+      
+      const user = users.find((u: User) => u.username === username && u.password === password);
+      
+      if (!user) {
+        setError('Kullanıcı adı veya şifre yanlış.');
         return;
       }
 
-      const user = JSON.parse(userData);
-      if (user.password !== password) {
-        setError('Şifre yanlış.');
-        return;
-      }
-
-      localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('currentUser', username);
       
       alert('Giriş başarılı!');
