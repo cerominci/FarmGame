@@ -1,6 +1,7 @@
 "use client";
 import styles from "./page.module.css";
 import Box from "./components/box/box";
+import { useState } from "react";
 
 export default function Home() {
   const renderFarmGrid = () => {
@@ -12,6 +13,14 @@ export default function Home() {
     }
     return boxes;
   };
+
+  const [states, setStates] = useState(Array(16).fill(false));
+
+  function plantSeed(index) {
+    const newStates = [...states];
+    newStates[index] = true;
+    setStates(newStates);
+  }
 
   return (
     <div className={styles.container}>

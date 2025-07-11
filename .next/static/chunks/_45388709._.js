@@ -18,6 +18,7 @@ var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.v({
   "box": "Box-module__hDsz5q__box",
+  "boxContent": "Box-module__hDsz5q__boxContent",
 });
 }}),
 "[project]/src/app/components/box/box.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
@@ -29,19 +30,126 @@ __turbopack_context__.s({
     "default": (()=>Box)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$box$2f$Box$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/app/components/box/Box.module.css [app-client] (css module)");
+;
+var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
-function Box(props) {
+function Box() {
+    _s();
+    const [stage, setStage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [isGrowing, setIsGrowing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isWaitingForCollection, setIsWaitingForCollection] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const stages = [
+        "",
+        "Tohum",
+        "Fidan",
+        "Bitki",
+        "Çiçek",
+        "Kurumuş Çiçek"
+    ];
+    const handleClick = ()=>{
+        if (stage === 0) {
+            setStage(1);
+            setIsGrowing(true);
+        } else if (stage === 4 && isWaitingForCollection) {
+            setStage(0);
+            setIsGrowing(false);
+            setIsWaitingForCollection(false);
+        } else if (stage === 5) {
+            setStage(0);
+            setIsGrowing(false);
+            setIsWaitingForCollection(false);
+        }
+    };
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Box.useEffect": ()=>{
+            let growthInterval = null;
+            if (isGrowing) {
+                growthInterval = setInterval({
+                    "Box.useEffect": ()=>{
+                        setStage({
+                            "Box.useEffect": (prevStage)=>{
+                                if (prevStage === 4) {
+                                    setIsGrowing(false);
+                                    return prevStage;
+                                }
+                                return prevStage + 1;
+                            }
+                        }["Box.useEffect"]);
+                    }
+                }["Box.useEffect"], 2000);
+            }
+            return ({
+                "Box.useEffect": ()=>{
+                    if (growthInterval) {
+                        clearInterval(growthInterval);
+                    }
+                }
+            })["Box.useEffect"];
+        }
+    }["Box.useEffect"], [
+        isGrowing
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Box.useEffect": ()=>{
+            if (stage === 4) {
+                setIsWaitingForCollection(true);
+            } else {
+                setIsWaitingForCollection(false);
+            }
+        }
+    }["Box.useEffect"], [
+        stage
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Box.useEffect": ()=>{
+            let rotTimer = null;
+            if (isWaitingForCollection) {
+                rotTimer = setTimeout({
+                    "Box.useEffect": ()=>{
+                        setStage(5);
+                        setIsWaitingForCollection(false);
+                    }
+                }["Box.useEffect"], 4000);
+            }
+            return ({
+                "Box.useEffect": ()=>{
+                    if (rotTimer) {
+                        clearTimeout(rotTimer);
+                    }
+                }
+            })["Box.useEffect"];
+        }
+    }["Box.useEffect"], [
+        isWaitingForCollection
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$box$2f$Box$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].box
+        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$box$2f$Box$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].box,
+        onClick: handleClick,
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$box$2f$Box$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].boxContent,
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                children: stages[stage]
+            }, void 0, false, {
+                fileName: "[project]/src/app/components/box/box.tsx",
+                lineNumber: 78,
+                columnNumber: 17
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/src/app/components/box/box.tsx",
+            lineNumber: 77,
+            columnNumber: 13
+        }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/components/box/box.tsx",
-        lineNumber: 5,
+        lineNumber: 76,
         columnNumber: 9
     }, this);
 }
+_s(Box, "sRTBnRSunzgvcQWK0ZHHEPSfroE=");
 _c = Box;
 var _c;
 __turbopack_context__.k.register(_c, "Box");
@@ -60,22 +168,34 @@ __turbopack_context__.s({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$page$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/app/page.module.css [app-client] (css module)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$box$2f$box$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/components/box/box.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
 ;
 function Home() {
+    _s();
     const renderFarmGrid = ()=>{
         const boxes = [];
         for(let i = 0; i < 16; i++){
             boxes.push(/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$box$2f$box$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, i, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 10,
+                lineNumber: 11,
                 columnNumber: 9
             }, this));
         }
         return boxes;
     };
+    const [states, setStates] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(Array(16).fill(false));
+    function plantSeed(index) {
+        const newStates = [
+            ...states
+        ];
+        newStates[index] = true;
+        setStates(newStates);
+    }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$page$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].container,
         children: [
@@ -83,7 +203,7 @@ function Home() {
                 children: "Farm Game"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 18,
+                lineNumber: 27,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -91,16 +211,17 @@ function Home() {
                 children: renderFarmGrid()
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 20,
+                lineNumber: 29,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 17,
+        lineNumber: 26,
         columnNumber: 5
     }, this);
 }
+_s(Home, "CJOJr9gnRFBjESmCzbe2sXspFYs=");
 _c = Home;
 var _c;
 __turbopack_context__.k.register(_c, "Home");

@@ -1,0 +1,12 @@
+plant {
+  background-color: #8BC34A;
+  border: 2px solid #7CB342;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
