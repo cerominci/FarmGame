@@ -1,23 +1,29 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from "./Box.module.css";
+import { BalanceContext } from "@/app/contexts/BalanceContext";
 
 export default function Box(){
     const [stage, setStage] = useState(0); 
     const [isGrowing, setIsGrowing] = useState(false);
     const [isWaitingForCollection, setIsWaitingForCollection] = useState(false);
+    const [balance, setBalance] = useContext(BalanceContext);
 
     const stages = ["", "Tohum", "Fidan", "Bitki", "Çiçek", "Kurumuş Çiçek"];
 
+    const seedCost = 1; 
+    const cropReward = 3;
     const handleClick = () => {
-        if (stage === 0) {
+        if (stage === 0 && balance >= seedCost) {
             setStage(1); 
             setIsGrowing(true);
+            setBalance(balance - seedCost); 
         } 
         else if (stage === 4 && isWaitingForCollection) {
             setStage(0);
             setIsGrowing(false);
             setIsWaitingForCollection(false);
+            setBalance(balance + cropReward);
         }
         else if (stage === 5) {
             setStage(0); 
@@ -50,7 +56,8 @@ export default function Box(){
     useEffect(() => {
         if (stage === 4) {
             setIsWaitingForCollection(true);
-        } else {
+        } 
+        else {
             setIsWaitingForCollection(false);
         }
     }, [stage]);
