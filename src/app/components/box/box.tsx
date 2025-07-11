@@ -2,55 +2,66 @@
 import { useState, useEffect, useContext } from "react";
 import styles from "./Box.module.css";
 import { BalanceContext } from "@/app/contexts/BalanceContext";
+import { FlowerStoreContext } from "@/app/contexts/FlowerStoreContext";
 
-export default function Box(){
+export default function Box() {
     const [stage, setStage] = useState(0); 
     const [isGrowing, setIsGrowing] = useState(false);
     const [isWaitingForCollection, setIsWaitingForCollection] = useState(false);
     const [balance, setBalance] = useContext(BalanceContext);
+    const [selectedFlower] = useContext(FlowerStoreContext);
+    
+    const getStageContent = (stageNum: number) => {
+        switch(stageNum) {
+            case 0: return ""; 
+            case 1: return "🌱"; 
+            case 2: return "🌿"; 
+            case 3: return "🌾"; 
+            case 4: return selectedFlower.emoji; 
+            case 5: return "🥀"; 
+            default: return "";
+        }
+    };
 
-    const stages = ["", "Tohum", "Fidan", "Bitki", "Çiçek", "Kurumuş Çiçek"];
-
-    const seedCost = 10; 
-    const cropReward = 20;
     const handleClick = () => {
-        if (stage === 0 && balance >= seedCost) {
+        if (stage === 0 && balance >= selectedFlower.seedPrice) {
             setStage(1); 
             setIsGrowing(true);
-            setBalance(balance - seedCost);
+            setBalance(balance - selectedFlower.seedPrice);
         } 
         else if (stage === 4 && isWaitingForCollection) {
             setStage(0);
             setIsGrowing(false);
             setIsWaitingForCollection(false);
-            setBalance(balance + cropReward);
+            setBalance(balance + selectedFlower.cropPrice);
         }
         else if (stage === 5) {
             setStage(0); 
             setIsGrowing(false);
             setIsWaitingForCollection(false);
         }
-        else if(stage > 0 && stage < 5) {
+        else if(stage > 0 && stage < 4) {
             setStage(0); 
             setIsGrowing(false);
             setIsWaitingForCollection(false);
         }
     };
 
-
     useEffect(() => {
-        let growthInterval = null;
+        let growthInterval: NodeJS.Timeout | null = null;
         if (isGrowing) {
             growthInterval = setInterval(() => {
                 setStage(prevStage => {
                     if (prevStage === 4) {
                         setIsGrowing(false);
+                        setIsWaitingForCollection(true);
                         return prevStage;
                     }
                     return prevStage + 1;
                 });
-            }, 2000);
+            }, 1000); 
         }
+
         return () => {
             if (growthInterval) {
                 clearInterval(growthInterval);
@@ -59,22 +70,12 @@ export default function Box(){
     }, [isGrowing]);
 
     useEffect(() => {
-        if (stage === 4) {
-            setIsWaitingForCollection(true);
-        } 
-        else {
-            setIsWaitingForCollection(false);
-        }
-    }, [stage]);
-
-    useEffect(() => {
-        let rotTimer = null;
-        
+        let rotTimer: NodeJS.Timeout | null = null;
         if (isWaitingForCollection) {
             rotTimer = setTimeout(() => {
-                setStage(5); 
+                setStage(5);
                 setIsWaitingForCollection(false);
-            }, 4000); 
+            }, 1500);
         }
 
         return () => {
@@ -84,11 +85,16 @@ export default function Box(){
         };
     }, [isWaitingForCollection]);
 
-    return(
-        <div className={styles.box} onClick={handleClick}>
+    const stageClass = styles[`stage${stage}`] || '';
+
+    return (
+        <div 
+            className={`${styles.box} ${stageClass}`}
+            onClick={handleClick}
+        >
             <div className={styles.boxContent}>
-                <h2>{stages[stage]}</h2>
+                {getStageContent(stage)}
             </div>
         </div>
     );
-};
+}

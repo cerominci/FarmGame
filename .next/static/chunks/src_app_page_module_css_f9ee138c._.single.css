@@ -77,18 +77,25 @@
 }
 
 .page-module___8aEwW__storeButton {
-  cursor: pointer;
-  z-index: 20;
-  background: #fffbe7;
-  border: 2px solid #7cb342;
+  color: #fff;
+  text-align: end;
+  background-color: #4caf50;
+  border: 2px solid #388e3c;
   border-radius: 8px;
-  padding: .5rem 1.5rem;
+  margin: 8px 0;
+  padding: 12px 16px;
   font-size: 1.2rem;
-  font-weight: bold;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  box-shadow: 0 2px 8px #00000014;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.page-module___8aEwW__storeButton:hover {
+  background-color: #45a049;
+  box-shadow: 0 2px 6px #00000026;
+}
+
+.page-module___8aEwW__storeButton:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px #0000001a;
 }
 
 .page-module___8aEwW__storeModal {
@@ -121,6 +128,13 @@
   position: absolute;
   top: 10px;
   right: 16px;
+}
+
+.page-module___8aEwW__storeTopRight {
+  z-index: 10;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 /*# sourceMappingURL=src_app_page_module_css_f9ee138c._.single.css.map*/

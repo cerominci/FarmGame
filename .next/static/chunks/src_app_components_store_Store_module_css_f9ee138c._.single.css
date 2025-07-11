@@ -1,0 +1,105 @@
+/* [project]/src/app/components/store/Store.module.css [app-client] (css) */
+.Store-module__Tj7XIG__storeModal {
+  z-index: 100;
+  background: #0000004d;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  inset: 0;
+}
+
+.Store-module__Tj7XIG__storeModalContent {
+  background: #fffbe7;
+  border: 2px solid #b2d38f;
+  border-radius: 12px;
+  flex-direction: column;
+  align-items: center;
+  min-width: 300px;
+  padding: 1.5rem 2rem 1rem;
+  display: flex;
+  position: relative;
+  box-shadow: 0 8px 24px #00000026;
+}
+
+.Store-module__Tj7XIG__closeButton {
+  color: #888;
+  cursor: pointer;
+  z-index: 110;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+}
+
+.Store-module__Tj7XIG__closeButton:hover {
+  color: #555;
+}
+
+.Store-module__Tj7XIG__flowerList {
+  gap: 20px;
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.Store-module__Tj7XIG__flowerButton {
+  cursor: pointer;
+  background: #fff;
+  border: 2px solid #b2d38f;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+  padding: 12px 14px;
+  font-weight: bold;
+  transition: all .2s;
+  display: flex;
+}
+
+.Store-module__Tj7XIG__flowerButton:hover {
+  border-color: #8ab95f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px #0000001a;
+}
+
+.Store-module__Tj7XIG__flowerButton.Store-module__Tj7XIG__selected {
+  background: #e8f5d8;
+  border-color: #8ab95f;
+  transform: scale(1.05);
+}
+
+.Store-module__Tj7XIG__flowerButton div {
+  text-align: center;
+  margin: 4px 0;
+}
+
+.Store-module__Tj7XIG__flowerButton div:first-child {
+  margin-bottom: 8px;
+  font-size: 2rem;
+}
+
+.Store-module__Tj7XIG__storeModalContent h2 {
+  color: #4a6741;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.Store-module__Tj7XIG__flowerEmoji {
+  margin-bottom: .3rem;
+  font-size: 2.2rem;
+}
+
+.Store-module__Tj7XIG__flowerName {
+  color: #4e7c2f;
+  margin-bottom: .2rem;
+  font-size: 1.1rem;
+}
+
+.Store-module__Tj7XIG__flowerPrice {
+  color: #7cb342;
+  font-size: .95rem;
+}
+
+/*# sourceMappingURL=src_app_components_store_Store_module_css_f9ee138c._.single.css.map*/

@@ -44,6 +44,31 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
 }
 }}),
+"[project]/src/app/contexts/FlowerStoreContext.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
+"use strict";
+
+var { g: global, __dirname, k: __turbopack_refresh__, m: module } = __turbopack_context__;
+{
+__turbopack_context__.s({
+    "FlowerStoreContext": (()=>FlowerStoreContext),
+    "defaultFlower": (()=>defaultFlower)
+});
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+const defaultFlower = {
+    name: "Sunflower",
+    seedPrice: 1,
+    cropPrice: 3,
+    emoji: "🌻"
+};
+const FlowerStoreContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"])([
+    defaultFlower,
+    ()=>{}
+]);
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(module, globalThis.$RefreshHelpers$);
+}
+}}),
 "[project]/src/app/components/box/box.tsx [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -56,9 +81,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$box$2f$Box$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/src/app/components/box/Box.module.css [app-client] (css module)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contexts$2f$BalanceContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/contexts/BalanceContext.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contexts$2f$FlowerStoreContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/app/contexts/FlowerStoreContext.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -68,6 +95,9 @@ function Box() {
     const [isGrowing, setIsGrowing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [isWaitingForCollection, setIsWaitingForCollection] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [balance, setBalance] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contexts$2f$BalanceContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BalanceContext"]);
+    const [selectedFlower] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$contexts$2f$FlowerStoreContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["FlowerStoreContext"]);
+    const seedCost = selectedFlower.seedPrice;
+    const cropReward = selectedFlower.cropPrice;
     const stages = [
         "",
         "Tohum",
@@ -76,8 +106,6 @@ function Box() {
         "Çiçek",
         "Kurumuş Çiçek"
     ];
-    const seedCost = 10;
-    const cropReward = 20;
     const handleClick = ()=>{
         if (stage === 0 && balance >= seedCost) {
             setStage(1);
@@ -183,7 +211,7 @@ function Box() {
         columnNumber: 9
     }, this);
 }
-_s(Box, "/1QbBtqwdGPOaZfLh69mbXpYlTk=");
+_s(Box, "SXCpyOj7/6t5gqBd1Fzad0Dv2PY=");
 _c = Box;
 var _c;
 __turbopack_context__.k.register(_c, "Box");
@@ -552,4 +580,4 @@ if ("TURBOPACK compile-time falsy", 0) {
 }}),
 }]);
 
-//# sourceMappingURL=_94a48617._.js.map
+//# sourceMappingURL=_574f9809._.js.map
